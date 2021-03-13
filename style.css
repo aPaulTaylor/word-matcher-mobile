@@ -29,8 +29,7 @@ table {
     border-collapse: collapse;
 }
 
-input
-{
+input {
     font-size:24px;
 }
 
@@ -54,13 +53,11 @@ input[type=checkbox] {
 	color: #4a4e4d;
 }
 
-#pattern
-{
+#pattern {
     font-size:32px;
 }
 
-#blurb
-{
-  font-size: 16px;
-  color: #888888
+#blurb {
+  font-size: 12px;
+  color: #888888;
 }
