@@ -30,6 +30,7 @@ Length: <input type="number" id="minLen" name="minLen" min=1 max=31> to
 
 
 <script>
+patternField=document.getElementById('pattern');
 function goToWM() {
 //https://www.quinapalus.com/cgi-bin/match?pat=..gh&misp=0&minl=1&maxl=31&sps=abcdefghijklmnopqrstuvwxyz&sbs=&outp=0&dict=0&ent=Search
 patternText = encodeURIComponent(document.getElementById("pattern").value);
@@ -37,22 +38,32 @@ minLen = document.getElementById("minLen").value;
 maxLen = document.getElementById("maxLen").value;
 onlyuse = document.getElementById('allof').value.replaceAll(/[^a-z]/ig,'');
 useall = document.getElementById('only').value.replaceAll(/[^a-z]/ig,'');
-wm_url = `https://www.quinapalus.com/cgi-bin/match?pat=${patternText}&misp=0&minl=${minLen}&maxl=${maxLen}&sps=${useall}&sbs=${onlyuse}&outp=0&dict=0&ent=Search`;
+amtmt='';
+if(document.getElementById('amtmt').checked){amtmt='&cntd=on'}
+wm_url = `https://www.quinapalus.com/cgi-bin/match?pat=${patternText}&misp=0&minl=${minLen}&maxl=${maxLen}&sps=${useall}${amtmt}&sbs=${onlyuse}&outp=0&dict=0&ent=Search`;
 
 window.location.href=wm_url;
 }
-function addVowel(){document.getElementById('pattern').value += '@'}
-function addConsonant(){document.getElementById('pattern').value += '#'}
-function addStar(){document.getElementById('pattern').value += '*'}
+function addVowel(){
+  patternField.value += '@';
+  patternField.focus();
+}
+function addConsonant(){
+  patternField.value += '#';
+  patternField.focus();
+}
+function addStar(){
+  patternField.value += '*';
+  patternField.focus();
+}
 function addBrackets() {
-  patternField=document.getElementById('pattern');
   patternField.value += '[]';
   patternField.focus();
   cursorPos = patternField.value.length-1;
   patternField.setSelectionRange(cursorPos, cursorPos);
 }
 function cursorToEnd() {
-  patternField=document.getElementById('pattern');
+  patternField=patternField;
   patternField.focus();
   patternField.setSelectionRange(patternField.value.length,patternField.value.length);
 }
