@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Word Matcher Mobile</title>
   <link rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="style.css"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
@@ -27,7 +28,9 @@ Length: <input type="number" id="minLen" name="minLen" min=1 max=31> to
 <button onclick="goToWM()" id="goToWmButton">Search</button>
 </p>
 </div>
-
+<div id="blurb">
+This is a mobile-friendly interface to Quinapalus' excellent <a href='https://www.quinapalus.com/cgi-bin/match'>Word Matcher</a>. Filling in the fields and clicking Search will take you to Word Matcher with your query filled in and executed.
+</div>
 
 <script>
 patternField=document.getElementById('pattern');
