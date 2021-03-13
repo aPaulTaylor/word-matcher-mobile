@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="style.css"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<head>
+  <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="style.css"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
 <body class="lightbg">
 
 <div id="mainform">
-<p><input type="text" id="pattern" name="pattern" size=30 autocorrect="off" autocapitalize="none"></p>
-<p>
-Length: <input type="number" id="minLen" name="minLen" min=1 max=31> to
-<input type="number" id="maxLen" name="maxLen" min=1 max=31>
-</p>
+<p><input type="text" id="pattern" name="pattern" size=20 autocorrect="off" autocapitalize="none"></p>
 <p>
 <button onclick="addBrackets()" id="addBrackets">[]</button>
 <button onclick="addVowel()" id="addVowel">@</button>
 <button onclick="addConsonant()" id="addConsonant">#</button>
 <button onclick="cursorToEnd()" id="cursorToEnd">&#62;&#62;</button>
-</p><p>
+</p>
+<p>
+Length: <input type="number" id="minLen" name="minLen" min=1 max=31> to
+<input type="number" id="maxLen" name="maxLen" min=1 max=31>
+</p>
+<p><table align='center'>
+<tr><td>Only:</td><td><input type="text" id="only" name="only" value="abcdefghijklmnopqrstuvwxyz" size=12 autocorrect="off" autocapitalize="none"></td><td><input type="checkbox" id="amtmt" name="amtmt"></td></tr>
+<tr><td>All of:</td><td><input type="text" id="allof" name="allof" size=12 autocorrect="off" autocapitalize="none"></td></tr>
+</table></p>
+<p>
 <button onclick="goToWM()" id="goToWmButton">Search</button>
 </p>
 </div>
@@ -26,7 +34,10 @@ function goToWM() {
 patternText = encodeURIComponent(document.getElementById("pattern").value);
 minLen = document.getElementById("minLen").value;
 maxLen = document.getElementById("maxLen").value;
-wm_url = `https://www.quinapalus.com/cgi-bin/match?pat=${patternText}&misp=0&minl=${minLen}&maxl=${maxLen}&sps=abcdefghijklmnopqrstuvwxyz&sbs=&outp=0&dict=0&ent=Search`;
+onlyuse = document.getElementById('allof').value.replaceAll(/[^a-z]/ig,'');
+useall = document.getElementById('only').value.replaceAll(/[^a-z]/ig,'');
+wm_url = `https://www.quinapalus.com/cgi-bin/match?pat=${patternText}&misp=0&minl=${minLen}&maxl=${maxLen}&sps=${useall}&sbs=${onlyuse}&outp=0&dict=0&ent=Search`;
+
 window.location.href=wm_url;
 }
 function addVowel(){document.getElementById('pattern').value += '@'}

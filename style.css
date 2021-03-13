@@ -23,12 +23,23 @@ button {
   display: inline-block;
   font-size: 16px;
   font-family: "Roboto";
-  margin-bottom: 30px;
+}
+
+table {
+    border-collapse: collapse;
 }
 
 input
 {
     font-size:24px;
+}
+
+input[type=number]{
+    width: 40px;
+}
+
+input[type=checkbox] {
+    transform: scale(2);
 }
 
 select {
@@ -85,4 +96,9 @@ select {
 #myNumber {
   display: flex;
   justify-content: flex-end;
+}
+
+#pattern
+{
+    font-size:32px;
 }
