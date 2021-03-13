@@ -4,7 +4,7 @@
 <body class="lightbg">
 
 <div id="mainform">
-<p><input type="text" id="pattern" name="pattern" size=30></p>
+<p><input type="text" id="pattern" name="pattern" size=30 autocomplete=false></p>
 <p>
 Length: <input type="number" id="minLen" name="minLen" min=1 max=31> to
 <input type="number" id="maxLen" name="maxLen" min=1 max=31>
@@ -13,6 +13,7 @@ Length: <input type="number" id="minLen" name="minLen" min=1 max=31> to
 <button onclick="addBrackets()" id="addBrackets">[]</button>
 <button onclick="addVowel()" id="addVowel">@</button>
 <button onclick="addConsonant()" id="addConsonant">#</button>
+<button onclick="cursorToEnd()" id="cursorToEnd">&#62;&#62;</button>
 </p><p>
 <button onclick="goToWM()" id="goToWmButton">Search</button>
 </p>
@@ -23,9 +24,9 @@ Length: <input type="number" id="minLen" name="minLen" min=1 max=31> to
 function goToWM() {
 //https://www.quinapalus.com/cgi-bin/match?pat=..gh&misp=0&minl=1&maxl=31&sps=abcdefghijklmnopqrstuvwxyz&sbs=&outp=0&dict=0&ent=Search
 patternText = encodeURIComponent(document.getElementById("pattern").value);
-wm_url = "https://www.quinapalus.com/cgi-bin/match?pat="+
-          patternText+
-          "&misp=0&minl=1&maxl=31&sps=abcdefghijklmnopqrstuvwxyz&sbs=&outp=0&dict=0&ent=Search";
+minLen = document.getElementById("minLen").value;
+maxLen = document.getElementById("maxLen").value;
+wm_url = `https://www.quinapalus.com/cgi-bin/match?pat=${patternText}&misp=0&minl=${minLen}&maxl=${maxLen}&sps=abcdefghijklmnopqrstuvwxyz&sbs=&outp=0&dict=0&ent=Search`;
 window.location.href=wm_url;
 }
 function addVowel(){document.getElementById('pattern').value += '@'}
@@ -36,6 +37,11 @@ function addBrackets() {
   patternField.focus();
   cursorPos = patternField.value.length-1;
   patternField.setSelectionRange(cursorPos, cursorPos);
+}
+function cursorToEnd() {
+  patternField=document.getElementById('pattern');
+  patternField.focus();
+  patternField.setSelectionRange(patternField.value.length,patternField.value.length);
 }
 </script>
 </body>
