@@ -14,9 +14,9 @@ h1 {
 }
 
 button {
-  background-color: #3da4ab;
+  background-color: #A20101;
   border: none;
-  color: #4a4e4d;
+  color: #ffffff;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -58,7 +58,7 @@ select {
 }
 
 .lightbg {
-	background-color: #f6cd61;
+	background-color: #f6cc00;
 	color: #4a4e4d;
 }
 

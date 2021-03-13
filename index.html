@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="style.css"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="https://randojs.com/1.0.0.js"></script></head>
-<body class="lightbg" onload="showRandomNumber();">
+<head><link rel="stylesheet" href="style.css"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<body class="lightbg">
 
 <div id="mainform">
-<form id="frm1" action="/action_page.php">
 <p><input type="text" id="pattern" name="pattern" size=30></p>
-</form>
-<button onclick="myFunction()" id="workoutButton">Search</button>
+<p>
+Length: <input type="number" id="minLen" name="minLen" min=1 max=31> to
+<input type="number" id="maxLen" name="maxLen" min=1 max=31>
+</p>
+<p>
+<button onclick="addBrackets()" id="addBrackets">[]</button>
+<button onclick="addVowel()" id="addVowel">@</button>
+<button onclick="addConsonant()" id="addConsonant">#</button>
+</p><p>
+<button onclick="goToWM()" id="goToWmButton">Search</button>
+</p>
 </div>
 
 
 <script>
-function myFunction() {
+function goToWM() {
 //https://www.quinapalus.com/cgi-bin/match?pat=..gh&misp=0&minl=1&maxl=31&sps=abcdefghijklmnopqrstuvwxyz&sbs=&outp=0&dict=0&ent=Search
-patternText = document.getElementById("pattern").value;
+patternText = encodeURIComponent(document.getElementById("pattern").value);
 wm_url = "https://www.quinapalus.com/cgi-bin/match?pat="+
           patternText+
           "&misp=0&minl=1&maxl=31&sps=abcdefghijklmnopqrstuvwxyz&sbs=&outp=0&dict=0&ent=Search";
 window.location.href=wm_url;
+}
+function addVowel(){document.getElementById('pattern').value += '@'}
+function addConsonant(){document.getElementById('pattern').value += '#'}
+function addBrackets() {
+  patternField=document.getElementById('pattern');
+  patternField.value += '[]';
+  patternField.focus();
+  cursorPos = patternField.value.length-1;
+  patternField.setSelectionRange(cursorPos, cursorPos);
 }
 </script>
 </body>
