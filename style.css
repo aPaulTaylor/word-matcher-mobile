@@ -1,6 +1,5 @@
 body {
   font-family: "Roboto";
-  font-size: 24px;
   color: #fe8a71;
 }
 
@@ -47,6 +46,7 @@ input[type=checkbox] {
 #mainform {
 	text-align: center;
 	margin-top: 30px;
+  font-size: 24px;
 }
 
 .lightbg {
