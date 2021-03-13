@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="style.css"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="https://randojs.com/1.0.0.js"></script></head>
+<body class="lightbg" onload="showRandomNumber();">
+
+<div id="mainform">
+<form id="frm1" action="/action_page.php">
+<p><input type="text" id="pattern" name="pattern" size=30></p>
+</form>
+<button onclick="myFunction()" id="workoutButton">Search</button>
+</div>
+
+
+<script>
+function myFunction() {
+//https://www.quinapalus.com/cgi-bin/match?pat=..gh&misp=0&minl=1&maxl=31&sps=abcdefghijklmnopqrstuvwxyz&sbs=&outp=0&dict=0&ent=Search
+patternText = document.getElementById("pattern").value;
+wm_url = "https://www.quinapalus.com/cgi-bin/match?pat="+
+          patternText+
+          "&misp=0&minl=1&maxl=31&sps=abcdefghijklmnopqrstuvwxyz&sbs=&outp=0&dict=0&ent=Search";
+window.location.href=wm_url;
+}
+</script>
+</body>
+</html>
