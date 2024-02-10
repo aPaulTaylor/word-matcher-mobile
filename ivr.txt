@@ -1,0 +1,70 @@
+Albania	AL
+Alderney	GBA
+Andorra	AND
+Ascension Island	
+Australia	AUS
+Austria	A
+Belarus	BY
+Belgium	B
+Bermuda	
+Bosnia and Herzegovina	BIH
+Bulgaria	BG
+Cambodia	KH in common use; K
+Canada	CDN
+Cayman Islands	
+Croatia	HR
+Cyprus	CY
+Czechia	CZ
+Democratic Republic of the Congo	DRC
+Denmark	DK
+Estonia	EST
+Falkland Islands	
+Faroe Islands	FO
+Finland	FIN
+France	F
+Germany	D
+Gibraltar	GBZ
+Greece	GR
+Guernsey	GBG
+Hong Kong	
+Hungary	H
+Iceland	IS
+Republic of Ireland	IRL
+Isle of Man	GBM
+Israel	IL
+Italy	I
+Japan	J
+Jersey	GBJ
+Kosovo	RKS
+Latvia	LV
+Liechtenstein	FL
+Lithuania	LT
+Luxembourg	L
+Malta	M
+Moldova	MD
+Monaco	MC
+Montenegro	MNE
+Netherlands	NL
+New Zealand	NZ
+North Macedonia	NMK
+Norway	N
+Poland	PL
+Portugal	P
+Romania	RO
+Russia	RUS
+San Marino	RSM
+Serbia	SRB
+Singapore	SGP
+Slovakia	SK
+Slovenia	SLO
+South Africa	ZA
+South Sudan	SS
+Spain	E
+St Helena	
+Sweden	S
+Switzerland	CH
+Ukraine	UA
+United Arab Emirates	UAE
+United Kingdom	UK
+United States of America	USA
+Vatican City	V
