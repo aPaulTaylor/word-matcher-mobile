@@ -1,0 +1,86 @@
+body {
+  font-family: "Roboto";
+  color: #fe8a71;
+}
+
+p {
+  margin: 15px
+}
+
+h1 {
+  color: #3da4ab;
+  margin-left: 0px;
+  font-family: "Roboto";
+}
+
+button {
+  background-color: #A20101;
+  border: none;
+  color: #ffffff;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Roboto";
+}
+
+input {
+    font-size:24px;
+}
+
+input[type=number]{
+    width: 40px;
+}
+
+input[type=checkbox] {
+    transform: scale(2);
+    margin-left: 10px;
+}
+
+#mainform {
+	text-align: center;
+	margin-top: 30px;
+  font-size: 24px;
+}
+
+.lightbg {
+	background-color: lightgray;
+	color: #4a4e4d;
+}
+
+#pattern {
+    font-size:32px;
+}
+
+#blurb {
+  font-size: 16px;
+  color: #888888;
+}
+
+/* Define the table width and border */
+table {
+    width: 80%;
+    border: 2px solid black;
+}
+
+/* Center the table content and add some padding */
+th, td {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Alternate the background color of the table rows */
+tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
+
+/* Highlight the table header with a different color */
+thead {
+    background-color: darkgray;
+}
+
